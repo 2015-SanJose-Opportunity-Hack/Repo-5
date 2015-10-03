@@ -1,0 +1,8 @@
+
+.dd {
+	width: 273px!important;
+}
+
+li .dd {
+	width: auto!important;
+}

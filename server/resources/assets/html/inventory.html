@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="description" content=" ">
+		<title>CHD Customer Solutions and Risk and FSO</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0">	  
+        <link href="../css/main.css" rel="stylesheet" media="screen">
+        <script src="../js/jquery-2.1.1.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/store-util.js"></script>
+
+        <script>
+            if(window.onload) {
+                var _existing = window.onload;
+                window.onload = function() {
+                    _existing();
+                    validatePage();
+                };
+            } else {
+                window.onload = validatePage;
+            }
+        </script>
+	  
+	</head>
+	<body>
+        <header>
+            <form method="GET" action="/store" id="form01">
+
+                <div class="header-logo" onclick="pageSubmit('form01')">
+                </div>
+            </form>
+            <div class="header-cart-count" id="cartCount"> (0)</div>
+            <div class="header-cart"><img class="header-cart-img" src="../image/icons/cart-icon.png"></div>
+            <div class="header-cart-label"></div>
+            <div class="header-signin">Hi, Jessy &nbsp;&nbsp; <a href="#" style="font-size: 12px"> Logout</a></div>
+        </header>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Incentive Merchandise</a></li>
+                <li>|</li>
+                <li><a href="history.html">Order History</a></li>
+                <li>|</li>
+                <li><a href="admin.html">Administration</a></li>
+
+            </ul>
+            <div class="search-box">
+                <img class="search-icon" src="../image/icons/search-icon.png" width="35" height="35" alt="search icon" />
+                <input name="search" type="text" placeholder="Search" />
+                <img class="search-close" src="../image/icons/search-close-icon.png" width="35" height="35" alt="search icon" />
+            </div>
+        </div>
+
+        <main class="container-main">
+            <div class="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-title">Admin Menu</li>
+                    <li> <a href="admin.html">Access Management </a> </li>
+                    <li> <a href="inventory.html"><span class="selected-page">Inventory Management</span></a> </li>
+                    <li> <a href="credit.html">Credit Management</a> </li>
+                </ul>
+                
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-title">
+                    <div class="table-heading"> 
+                        Inventory Management
+                    </div>
+                    <div class="add-icon">
+                        <a href="add-product.html"><img src="../image/icons/plus-icon.png"></a>
+                    </div>
+                </div>
+
+                <table class="table-body">
+                    <thead>
+                        <tr>
+                            <th>Image Thumbnail</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>In stock</th>
+                            <th>Quantity</th>
+                            <th colspan="2">Action</th>    
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="1">
+                            <td>Image Placeholder</td>
+                            <td>Playing Cards</td>
+                            <td>$5.00</td>
+                            <td>Yes</td>
+                            <td>99</td>
+                            <td ><a href="#"><img src="../image/icons/update.png" title="Edit record" class="edit-icon"></a></td>
+                            <td><a href="#" onclick="deleteItem(1)"><img src="../image/icons/close_icon.png" title="Remove record"  class="trash-icon"></a></td>    
+                        </tr>
+                        <tr id="2">
+                            <td>Image Placeholder</td>
+                            <td>T-Shirt</td>
+                            <td>$15.00</td>
+                            <td>Yes</td>
+                            <td>99</td>
+                            <td ><a href="#"><img src="../image/icons/update.png" title="Edit record" class="edit-icon"></a></td>
+                            <td><a href="#" onclick="deleteItem(2)"><img src="../image/icons/close_icon.png" title="Remove record"  class="trash-icon"></a></td>    
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </main>
+
+        <br>
+        <div class="footer_copyright">
+            &copy; 2015 CHD PayPal Store ALL RIGHTS RESERVED. <a href="#"> PRIVACY POLICY</a> | <a href="#">TERMS & CONDITIONS</a>
+        </div>
+
+        
+	</body>
+</html>

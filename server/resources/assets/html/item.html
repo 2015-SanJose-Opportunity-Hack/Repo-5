@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="description" content=" ">
+		<title>CHD Customer Solutions and Risk and FSO</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0">	  
+		<link href="../css/main.css" rel="stylesheet" media="screen">
+        <script src="../js/jquery-2.1.1.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/store-util.js"></script>
+        <script>
+            if(window.onload) {
+                var _existing = window.onload;
+                window.onload = function() {
+                    _existing();
+                    loadItemPage();
+                };
+            } else {
+                window.onload = loadItemPage;
+            }
+            var productDetails = [
+
+            ["1","Lou Daltons Chambray shirt", "$15.00","01"],
+            ["2","Moreno Shirt Sleeve Polo Shirt", "$14.00","02"],
+            ["3","Black Messenger Bag", "$12.00","03"],
+            ["4","PayPal Parody Trucker Hat", "$7.00","04"],
+            ["5","PayPal Parody Trucker Hat", "$7.00","05"],
+                ["6","PayPal Parody Trucker Hat", "$7.00","06"],
+            "[]"];
+        </script>
+	  
+	</head>
+	<body>
+        <header>
+            <form method="GET" action="index.html" id="form01">
+
+                <div class="header-logo" onclick="pageSubmit('form01')">
+                </div>
+            </form><a href="shopping_cart.html">
+            <div class="header-cart-count" id="cartCount"> (0)</div>
+            <div class="header-cart"><img class="header-cart-img" src="../image/icons/cart-icon.png"></div>
+            <div class="header-cart-label"></div></a>
+            <div class="header-signin">Hi, Jessy &nbsp;&nbsp; <a href="#" style="font-size: 12px"> Logout</a></div>
+        </header>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Incentive Merchandise</a></li>
+                <li>|</li>
+                <li><a href="services.html">Order History</a></li>
+                <li>|</li>
+                <li><a href="aboutus.html">Administration</a></li>
+            </ul>
+            <div class="search-box">
+                <img class="search-icon" src="../image/icons/search-icon.png" width="35" height="35" alt="search icon" />
+                <input name="search" type="text" placeholder="Search" />
+                <img class="search-close" src="../image/icons/search-close-icon.png" width="35" height="35" alt="search icon" />
+            </div>
+        </div>
+        <main class="clean-left">
+            <div class="container">
+                <div class="main-item-details-div clean-left">
+                    <form id="form" method = "POST" action="addcart.html">
+                        <div class="container-div clean-left">
+                            <img id="zoomImage1" src="../image/icons/zoom_icon.png" class="corner-image">
+                            <img id="itemMainImage" src="../image/item/item_1001.png" class="registry-item-image clean-left" onclick="showItemImage();"  >
+                            <div id="tooltip">
+                                <img src="../image/icons/close_icon.png" class="close-image clean-right" onclick="closeImage();">
+                                <div>
+                                    <img src="../image/item/item_big_1001.png" id="item-image" class="item-image clean-left" onclick="zoomInProduct();"/>
+                                </div>
+                                <input type="hidden" id="zoom" value="zoom-out">
+                            </div>
+                        </div>
+
+                        <div class="product-details keep-left">
+                            <span class="clean-left big-text-size primary-font-regular">Lou Daltons Chambray shirt</span>
+                            <span class="clean-left small-text-size primary-font-regular">Color: Dark Blue</span>
+                            <span class="clean-left">&nbsp; </span>
+                            <span class="clean-left small-text-size primary-font-regular">
+                            Size :
+                                <select>
+                                    <option value="sm" selected="selected">SM</option>
+                                    <option value="med">MED</option>
+                                    <option value="lg">LG</option>
+                                    <option value="xl">XL</option>
+                                    <option value="xxl">XXL</option>
+                                    <option value="3xl">3XL</option>
+                                    <option value="4xl">4XL</option>
+                                    <option value="5xl">5XL</option>
+                                </select>
+                            </span>
+                            <span class="clean-left">&nbsp; </span>
+                            <span class="clean-left primary-color header-text-size primary-font-regular">Price: $15.00</span>
+                            <span class="clean-left">&nbsp; </span>
+                            <span class="clean-left small-text-size primary-font-regular">Quantity: <span id="quantity1">25</span></span>
+
+                            <div class="clean-left small-text-size primary-font-regular" style="width: auto!important;" >
+                                <div style="float:left; width: auto!important;height: 22px;margin-left: 2px;line-height: 22px">Purchased:</div>
+                                <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased1')"></div>
+                                <input id="purchased1" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased1')"></div>
+                            </div>
+                            <span class="clean-left">&nbsp; </span>
+
+                            <!--<img src="../image/icons/AddToCart_Btn.png" width="250px" height="50px" class ="button keep-left" onclick="showToolTip(this)">-->
+                            <input id="addToCartBtn1" class="btn-default keep-left" style="margin-top: 30px" value="ADD TO CART" onclick="addToCart(1);" type="button">
+                            <a href="shopping_cart.html"><input id="checkout1" class="btn-default keep-left" style="margin-top: 30px; margin-left: 20px" value="CHECKOUT" onclick="" type="button"></a>
+                        </div>
+
+                        <div id="tabbed_box_1" class="tabbed-box clean-left description-color">
+                            <div class="tabbed-area">
+                                <ul class="tabs">
+                                    <li><a href="javascript:tabSwitch_2(1, 3, 'tab_', 'content_');" id="tab_1" class="active">Description</a></li>
+                                    <!--<li><a href="javascript:tabSwitch_2(2, 3, 'tab_', 'content_');" id="tab_2">Product Reviews</a></li>-->
+                                    <!--<li><a href="javascript:tabSwitch_2(3, 3, 'tab_', 'content_');" id="tab_3">Shipping & Returns</a></li>-->
+                                </ul>
+
+                                <div id="content_1" class="clean-left content description-color">
+                                    <article class="clean-left" id="product-description">
+                                        Lou Daltons Chambray shirt will make a great addition to your weekend wardrobe. The shirt, which has a loose fit and is made from super soft cotton, will work well with any casual look. The dark blue color of the shirt will work well with other autumn shades and the angled front pockets give it a modern edge. Wear with turned up jeans and boots for the ultimate in off duty cool.
+                                    </article>
+                                    <h4 class="clean-left">Product Features:</h4>
+                                    <ul class="clean-left" id="product-feature">
+                                        <li>
+                                            With a solid training in the form of an apprenticeship in bespoke tailoring and an MA in Menswear from RCA Lou Dalton set up her own label which quickly developed a reputation for rebellious English sportswear with a strong attention to detail and exceptional craftmanship.
+                                        </li>
+                                        <li>
+                                            Since it’s creation in 2005 the brand has been steadily developing, gaining much critical acclaim from the fashion industry along the way.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="content_2" class="clean-left  content">
+                                    <article class="clean-left black-color">Overall Rating Totals </article>
+                                    <div class="clean-left review-content">
+                                        <div class="clean-left review-content">
+                                            <label class="clean-left description-color">5 Stars</label>
+                                            <div class="keep-left review-progress">
+                                                <div id="review-progress-bar-5" class="clean-left "></div>
+                                            </div>
+                                            <a class="keep-left primary-color" id="starts-count-5">(23)</a>
+                                        </div>
+                                        <div class="clean-left review-content">
+                                            <label class="clean-left description-color">4 Stars</label>
+                                            <div class="keep-left review-progress">
+                                                <div id="review-progress-bar-4" class="clean-left "></div>
+                                            </div>
+                                            <a class="keep-left primary-color" id="starts-count-4">(15)</a>
+                                        </div>
+                                        <div class="clean-left review-content">
+                                            <label class="clean-left description-color">3 Stars</label>
+                                            <div class="keep-left review-progress">
+                                                <div id="review-progress-bar-3" class="clean-left "></div>
+                                            </div>
+                                            <a class="keep-left primary-color" id="starts-count-3">(10)</a>
+                                        </div>
+                                        <div class="clean-left review-content">
+                                            <label class="clean-left description-color">2 Stars</label>
+                                            <div class="keep-left review-progress">
+                                                <div id="review-progress-bar-2" class="clean-left "></div>
+                                            </div>
+                                            <a class="keep-left primary-color" id="starts-count-2">(3)</a>
+                                        </div>
+                                        <div class="clean-left review-content">
+                                            <label class="clean-left description-color">1 Star</label>
+                                            <div class="keep-left review-progress">
+                                                <div id="review-progress-bar-1" class="clean-left "></div>
+                                            </div>
+                                            <a class="keep-left primary-color" id="starts-count-1">(1)</a>
+                                        </div>
+                                        <a class="clean-left primary-color" onclick="showToolTip(this)"> Read all reviews</a>
+                                    </div>
+                                    <div class="keep-left recommended">
+                                        <span id="recommended-no" class="clean-left primary-color">81</span>
+                                        <span id="recommended-percentage" class="keep-left primary-color">%</span>
+                                        <label class="keep-left description-color">recommended</label>
+                                    </div>
+
+
+                                </div>
+                                <div id="content_3" class="clean-left  content">
+                                    <p >
+                                        <strong class="black-color">FREE Shipping:</strong><br>
+                                        Unlike many other web sites that have special rules and lots of fine print,
+                                        Smartshop offers free shipping on all domestic orders placed on our website, with no minimum order sizes or special exceptions.
+
+                                    </p>
+                                    <p >
+                                        Just because shipping is free doesn't mean it should take a long time. Smartshop understands that getting your items quickly is important to you,
+                                        so we make every effort to process your order quickly. When you order from our website, you can expect to receive your order within 4-5 business days.
+                                    </p>
+                                    <p >
+                                        <strong class="black-color">FREE Returns:</strong><br>
+                                        If you are not 100% satisfied with your purchase, you can return your order to the warehouse for a full refund
+                                        (Returns must be unworn, in the state you received them, and in the original packaging).
+                                        We believe that in order to have the best possible online shopping experience, our customers should not have to pay for domestic return shipping.
+                                        So if for whatever reason you're not happy with your purchase, just go through our easy self-service return process to print out a free return label - your domestic shipping costs are prepaid.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!--Scrollable image box starts-->
+                    <div id="scrollable-image-box" class="scrollable-image-box clean-left">
+                        <span class="clean-left black-color">Other Incentive Merchandise Items</span>
+                        <div id="" class="scrollable-image-box-inner clean-left" >
+                            <img src="../image/icons/left.png" class="left-arrow-div clean-left" onclick="previousItem()">
+                            <input type="hidden" id="currentImageIndex" value="5">
+
+
+                            <form method="POST" id="form1">
+                                <div id="scroll-item-image1" class="item-image align-middle">
+                                    <img id="itemScollImg1" src="../image/item/item_thumb_1001.png">
+                                    <div id="itemScollName1" class="enable-text-copy itemScrollName good-text-size primary-font-regular black-color">Lou Daltons Chambray..</div>
+                                    <span id="itemScollPrice1" class="item-scoll-price good-text-size primary-font-regular  primary-color">$15.00</span>
+                                    <input type="hidden" name="productId" id="productId1" value="1">
+                                </div>
+                            </form>
+                            <form method="POST" id="form2">
+                                <div id="scroll-item-image2" class="item-image align-middle">
+                                    <img id="itemScollImg2" src="../image/item/item_thumb_1002.png">
+                                    <div id="itemScollName2" class="enable-text-copy itemScrollName good-text-size primary-font-regular black-color">Moreno Shirt Sleeve..</div>
+                                    <span id="itemScollPrice2" class="item-scoll-price good-text-size primary-font-regular  primary-color">$14.00</span>
+                                    <input type="hidden" name="productId" id="productId2" value="2">
+                                </div>
+                            </form>
+                            <form method="POST" id="form3">
+                                <div id="scroll-item-image3" class="item-image align-middle">
+                                    <img id="itemScollImg3" src="../image/item/item_thumb_1003.png">
+                                    <div id="itemScollName3" class="enable-text-copy itemScrollName good-text-size primary-font-regular black-color">Black Messenger Bag</div>
+                                    <span id="itemScollPrice3" class="item-scoll-price good-text-size primary-font-regular  primary-color">$12.00</span>
+                                    <input type="hidden" name="productId" id="productId3" value="3">
+                                </div>
+                            </form>
+                            <form method="POST" id="form4">
+                                <div id="scroll-item-image4" class="item-image align-middle">
+                                    <img id="itemScollImg4" src="../image/item/item_thumb_1004.png">
+                                    <div id="itemScollName4" class="enable-text-copy itemScrollName good-text-size primary-font-regular black-color">PayPal Parody Trucker..</div>
+                                    <span id="itemScollPrice4" class="item-scoll-price good-text-size primary-font-regular  primary-color">$7.00</span>
+                                    <input type="hidden" name="productId" id="productId4" value="4">
+                                </div>
+                            </form>
+                            <form method="POST" id="form5">
+                                <div id="scroll-item-image5" class="item-image align-middle">
+                                    <img id="itemScollImg5" src="../image/item/item_thumb_1005.png">
+                                    <div id="itemScollName5" class="enable-text-copy itemScrollName good-text-size primary-font-regular black-color">PayPal Parody Trucker..</div>
+                                    <span id="itemScollPrice5" class="item-scoll-price good-text-size primary-font-regular  primary-color">$7.00</span>
+                                    <input type="hidden" name="productId" id="productId5" value="5">
+                                </div>
+                            </form>
+                            <img src="../image/icons/right.png" onclick="nextItem()" class="right-arrow-div keep-left">
+                        </div>
+                    </div>
+                    <!--Scrollable image box ends-->
+                </div>
+            </div>
+        </main>
+        <br><br><br>
+        <div class="footer_copyright">
+            &copy; 2015 CHD PayPal Store ALL RIGHTS RESERVED. <a href="#"> PRIVACY POLICY</a> | <a href="#">TERMS & CONDITIONS</a>
+        </div>
+
+        <div id="tool-tip-pop-up">
+            <img src="../image/icons/close_icon.png" class="close-image clean-right" onclick="closeToolTip();">
+            <span>The item added successfully to your shopping cart.</span>
+        </div>
+
+	</body>
+</html>

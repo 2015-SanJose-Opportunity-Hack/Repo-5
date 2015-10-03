@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	
+	<head>
+		
+		<meta charset="utf-8">
+		<meta name="description" content=" ">
+		<title>CHD Customer Solutions and Risk and FSO</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0">	  
+		<link href="../css/main.css" rel="stylesheet" media="screen">
+        <script src="../js/jquery-2.1.1.min.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/store-util.js"></script>
+        <script>
+            if(window.onload) {
+                var _existing = window.onload;
+                window.onload = function() {
+                    _existing();
+                    validatePage();
+                };
+            } else {
+                window.onload = validatePage;
+            }
+
+        </script>
+	  
+	</head>
+	<body>
+        <header>
+            <form method="GET" action="index.html" id="form01">
+
+                <div class="header-logo" onclick="pageSubmit('form01')">
+                </div>
+            </form><a href="shopping_cart.html">
+            <div class="header-cart-count" id="cartCount"> (0)</div>
+            <div class="header-cart"><img class="header-cart-img" src="../image/icons/cart-icon.png"></div>
+            <div class="header-cart-label"></div></a>
+            <div class="header-signin">Hi, Jessy &nbsp;&nbsp; <a href="#" style="font-size: 12px"> Logout</a></div>
+        </header>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Incentive Merchandise</a></li>
+                <li>|</li>
+                <li><a href="history.html">Order History</a></li>
+                <li>|</li>
+                <li><a href="admin.html">Administration</a></li>
+
+            </ul>
+            <div class="search-box">
+                <img class="search-icon" src="../image/icons/search-icon.png" width="35" height="35" alt="search icon" />
+                <input name="search" type="text" placeholder="Search" />
+                <img class="search-close" src="../image/icons/search-close-icon.png" width="35" height="35" alt="search icon" />
+            </div>
+        </div>
+        <main class="clean-left">
+        <div class="container">
+            <div class="index-div clean-left">
+            <form id="form" action="item_details.html">
+            <div style="width: 17%;" class="filter-class">
+                <div class="store-heading">
+                    Price
+                </div>
+                <div class="store-content">
+
+                    <input type="checkbox" name="Tier" value="1" class="category-check"> <span class="category-text">Under $10</span><br>
+                    <input type="checkbox" name="Tier" value="2" class="category-check"> <span class="category-text">$10 - $20</span><br>
+                    <input type="checkbox" name="Tier" value="2" class="category-check"> <span class="category-text">$20 - $40</span><br>
+                </div>
+            </div>
+            <div class="main-store-div">
+                <img class="list-icon" style="float: right" src="../image/icons/list-icon.png" width="22px" height="22px" alt="list icon"
+                        onclick="changeView(2)"/>
+                <img class="list-icon" style="float: right" src="../image/icons/grid-icon.png" width="22px" height="22px" alt="list icon"
+                        onclick="changeView(1)"/>
+
+                <select name="sortBy"
+                        style="float: right; margin: 0 5px 0 5px; font-size: 14px; font-family: Arial; color: #8D8D8D; height: 22px;">
+
+                    <option value="iasc" selected="selected">Item: A to Z</option>
+                    <option value="idesc">Item: Z to A</option>
+                    <option value="lth">Price: Low to High</option>
+                    <option value="htl">Price: High to Low</option>
+                    <option value="qlth">Quantity: Low to High</option>
+                    <option value="qhtl">Quantity: High to Low</option>
+                </select>
+
+                <span style="float: right; ">Sort by</span>
+                    <br>
+                    <hr width="815px" size="1" style="clear: left;margin-left: 4px;color: #EDEDED;">
+
+                <div class="store-content">                  
+                    <!--********************************************-->
+                    <table width="790px" cellpadding="0" cellspacing ="0" id="listTable" style="display: block">
+                        <thead>
+                        <tr><th width="50%">Item Details</th><th width="10%" align="center">Price</th><th width="10%">Quantity</th><th width="10%">Purchased</th><th width="20%"> </th></tr>
+                        </thead>
+                     </table>
+                    <div id="container">
+    
+    <ul class="list" id="gridListId">
+        <li>
+        		   				<div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="price-div"><span class="priceTitle">Price:</span> <span>$15.00</span></div>
+                                <div class="quantity-div"><span class="quantityTitle">Quantity: </span><span id="quantity11">25</span></div>
+                                <div class="purchased-quantity-div">
+                                    <span style="float: left" class="purchasedTitle">Purchased:</span>
+                                    <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                    <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                    <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                </div>
+                                <div class="add-to-cart-button-div">
+                                    <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                </div>
+                                
+        </li>
+                <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+        <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+        <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+        <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+        <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+        <li>
+        		   <div class="container-div">
+                                    <img id="tickImage11" src="../image/icons/tick-icon.png" class="corner-image">
+                                    <a href="item.html">
+                                    <img src="../image/item/item_thumb_1001.png" class="store-item-image" >
+                                        </a>
+                                </div>
+                                <div class="store-item-name" id="storeItemNameId">
+                                    <span class="wedding-heading">Lou Daltons Chambray shirt</span>                                    
+                                    <p >Size :
+                                        <select>
+                                            <option value="sm" selected="selected">SM</option>
+                                            <option value="med">MED</option>
+                                            <option value="lg">LG</option>
+                                            <option value="xl">XL</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="3xl">3XL</option>
+                                            <option value="4xl">4XL</option>
+                                            <option value="5xl">5XL</option>
+                                        </select>
+                                    </p>
+                                    <div class="price-div">Price: $15.00</div>
+                                    <div class="quantity-div">Quantity: <span id="quantity11">25</span></div>
+                                    <div class="purchased-quantity-div">
+                                        <span style="float: left">Purchased:</span>
+                                        <div style="float:left; width: 22px;height: 22px;margin-left: 2px;"><img src="../image/icons/minus-icon.png" style="" onclick="decreasePurchaseQuantity('purchased11')"></div>
+                                        <input id="purchased11" type="text" value="0" max="2" min="2" maxlength="2" style="float:left;height:16px;line-height:16px;width: 16px;margin-left: 2px;vertical-align: middle">
+                                        <div style="float:left;width: 22px;height: 22px;margin-left: 2px"><img src="../image/icons/plus-icon.png" style="" onclick="increasePurchaseQuantity('purchased11')"></div>
+                                    </div>
+                                    <div class="add-to-cart-button-div">
+                                        <input type="button" id="addToCartBtn11" class="btn-default" value="ADD TO CART" onclick="addToCart(11);">
+                                    </div>
+                                </div>
+        </li>
+    </ul>
+</div>    
+
+                    <div class="pagination">
+                            <img src="../image/icons/right.png" class="pagination-arrow">
+                            <div class="pagination-page">1</div>
+                            <img src="../image/icons/left.png" class="pagination-arrow">
+
+                    </div>
+            </div>
+            </div>
+            </form>
+            </div>
+        </div>
+        </main>
+        <br><br><br>
+        <div class="footer_copyright">
+            &copy; 2015 CHD PayPal Store ALL RIGHTS RESERVED. <a href="#"> PRIVACY POLICY</a> | <a href="#">TERMS & CONDITIONS</a>
+        </div>
+
+        <div id="tool-tip-pop-up">
+            <img src="../image/icons/close_icon.png" class="close-image clean-right" onclick="closeToolTip();">
+            <span>The item added successfully to your shopping cart.</span>
+        </div>
+
+	</body>
+</html>
