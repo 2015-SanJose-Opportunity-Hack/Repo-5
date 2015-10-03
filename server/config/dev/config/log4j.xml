@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="consoleLog" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>	
+	
+	<appender name="genLog" class="org.apache.log4j.RollingFileAppender"> 
+    	<param name="File" value="/Users/csivakolundu/.hackathon/logs/General.log"/>
+    	<param name="Append" value="true"/>
+		<param name="MaxBackupIndex" value="20"/>
+		<param name="MaxFileSize" value="100000KB"/>
+    	<layout class="org.apache.log4j.PatternLayout">
+      		<param name="ConversionPattern" value="%d %-5p: %c - %m%n"/> 
+    	</layout> 
+    </appender>
+    
+   	<appender name="servicesLog" class="org.apache.log4j.RollingFileAppender"> 
+    	<param name="File" value="/Users/csivakolundu/.hackathon/logs/Services.log"/>
+    	<param name="Append" value="true"/>
+		<param name="MaxBackupIndex" value="20"/>
+		<param name="MaxFileSize" value="100000KB"/>
+    	<layout class="org.apache.log4j.PatternLayout">
+      		<param name="ConversionPattern" value="%d %-5p: %c - %m%n"/> 
+    	</layout> 
+    </appender>
+
+  	<appender name="paypalLog" class="org.apache.log4j.RollingFileAppender"> 
+    	<param name="File" value="/Users/csivakolundu/.hackathon/logs/PayPal.log"/>
+    	<param name="Append" value="true"/>
+		<param name="MaxBackupIndex" value="20"/>
+		<param name="MaxFileSize" value="100000KB"/>
+    	<layout class="org.apache.log4j.PatternLayout">
+      		<param name="ConversionPattern" value="%d %-5p: %c - %m%n"/> 
+    	</layout> 
+    </appender>	
+ 		<logger name="org.hibernate.SQL">
+                <level value="ERROR"/>
+        </logger>
+       <logger name="org.quartz">
+                <level value="info"/>
+        </logger>
+
+        <!-- 3rdparty Loggers -->
+        <logger name="org.springframework.core">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.springframework.beans">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.springframework.context">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.springframework.web">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.springframework.security">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.hibernate.type">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.springframework.log">
+                <level value="ERROR" />
+        </logger>
+
+        <logger name="org.apache">
+                <level value="error" />
+        </logger>
+	
+		<logger name="com.hackathon" additivity="false">
+			<level value="info" />
+			<appender-ref ref="genLog" />
+			<appender-ref ref="consoleLog" />
+		</logger>
+	
+   	<!-- Root Logger -->
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="consoleLog" />
+	</root>
+</log4j:configuration>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	                    http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+	                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	                    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+    default-autowire="byName">
+	                    
+	<description>DAO Context</description>
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.hackathon.dao,com.hackathon.entities" />
+
+	<bean class="com.hackathon.common.crypto.EncryptedPropertyPlaceholderConfigurer">	
+		<property name="order" value="0" />		
+		<property name="location" value="file:${HOME}/config/config.properties" />
+		<property name="ignoreUnresolvablePlaceholders" value="true"/>
+	</bean>
+
+	<bean id="rs.persist.datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">	
+    	<property name="driverClassName" value="${rs.persist.jdbc.driver.class}"/>
+    	<property name="url" value="${rs.persist.jdbc.url}"/>
+    	<property name="username" value="${rs.persist.jdbc.user}"/>
+    	<property name="password" value="${rs.persist.jdbc.password}"/>
+    	<property name="validationQuery" value="SELECT 1"/>
+    	<property name="testOnBorrow" value="true"/>
+    </bean>
+	
+	<bean id="persistedEntityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
+		<property name="persistenceUnitName" value="rs.persist"/>
+		<property name="dataSource" ref="rs.persist.datasource"/>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="persistedEntityManagerFactory"/>
+	</bean>
+
+	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+
+       	
+	
+</beans>
