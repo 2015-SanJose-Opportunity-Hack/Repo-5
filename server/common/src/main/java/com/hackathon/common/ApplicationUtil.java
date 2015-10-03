@@ -1,4 +1,4 @@
-package com.paypal.psc.rs.common;
+package com.hackathon.common;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

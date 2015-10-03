@@ -17,7 +17,7 @@
 	<context:annotation-config/>
 	<context:component-scan base-package="com.hackathon.dao,com.hackathon.entities" />
 
-	<bean class="com.hackathon.common.crypto.EncryptedPropertyPlaceholderConfigurer">	
+	<bean class="com.hackathon.common.EncryptedPropertyPlaceholderConfigurer">	
 		<property name="order" value="0" />		
 		<property name="location" value="file:${HOME}/config/config.properties" />
 		<property name="ignoreUnresolvablePlaceholders" value="true"/>

@@ -6,13 +6,13 @@
         
 	<distributable />
         
-	<display-name>admin</display-name>
+	<display-name>web</display-name>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>
-		<servlet-name>admin</servlet-name>
+		<servlet-name>web</servlet-name>
 		<servlet-class>
 			org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
@@ -27,7 +27,7 @@
         </multipart-config>		
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>admin</servlet-name>
+		<servlet-name>web</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
@@ -43,8 +43,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:/META-INF/spring/service.xml	
-			classpath*:META-INF/spring/security-app-context.xml	  
+			classpath:/META-INF/spring/service.xml	  
 			classpath*:META-INF/spring/application-context.xml			
 		</param-value>
 	</context-param>
@@ -59,12 +58,5 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	
 </web-app>

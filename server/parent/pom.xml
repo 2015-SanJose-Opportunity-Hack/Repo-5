@@ -46,6 +46,7 @@
 	</properties>
 	<modules>
 		<module>../config</module>
+		<module>../resources</module>
 		<module>../common</module>
 		<module>../dao</module>
 		<module>../services</module>				

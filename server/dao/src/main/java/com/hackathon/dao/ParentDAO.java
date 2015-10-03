@@ -1,4 +1,4 @@
-package com.paypal.psc.rs.dao;
+package com.hackathon.dao;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

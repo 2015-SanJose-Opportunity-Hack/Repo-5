@@ -1,4 +1,4 @@
-package com.paypal.psc.rs.entities;
+package com.hackathon.entities;
 
 import java.io.Serializable;
 
@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.paypal.psc.rs.common.crypto.EncryptedPropertyPlaceholderConfigurer;
 
 @Entity
 @Table(name="app_config")
@@ -58,9 +57,7 @@ public class AppConfig implements Serializable
 		return value;
 	}
 
-	public String getValue(EncryptedPropertyPlaceholderConfigurer encryptedPropertyPlaceholderConfigurer) {
-		return encryptedPropertyPlaceholderConfigurer.convertPropertyValue(value);		
-	}
+	
 	
 	public void setValue(String value) {
 		this.value = value;

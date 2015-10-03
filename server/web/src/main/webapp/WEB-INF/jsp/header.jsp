@@ -1,6 +1,6 @@
+<%@page import="com.hackathon.common.form.AgentUserForm"%>
 <%@page import="org.apache.commons.lang3.StringUtils"%>
-<%@page import="com.paypal.psc.rs.common.form.AgentUserForm"%>
-<%@page import="com.paypal.psc.rs.common.Role"%>
+
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -10,8 +10,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
-	AgentUserForm agentUserForm = (AgentUserForm) session.getAttribute("agentUserForm");
-	
+	AgentUserForm agentUserForm = (AgentUserForm) session.getAttribute("agentUserForm");	
 %>
 <c:url var="actionUrl" value='/home' />
 <c:url var="creditUrl" value='/credit' />
@@ -22,14 +21,13 @@
 <!-- header -->
 <header>
 	<form method="GET" action="${actionUrl}" id="form01">
-
 		<div class="header-logo" onclick="pageSubmit('form01')"></div>
 	</form>
 	<a href="home"> </a>
 	<div>
 		<a href="${shoppingCartUrl}">
 			<div class="header-cart-count" id="cartCount">
-				(<%=agentUserForm.getCartCount() %>)
+				
 			</div>
 			<div class="header-cart">
 				<img class="header-cart-img"
@@ -46,7 +44,7 @@
 				<%=agentUserForm.getName()%></div>
 			<div class="balance-display">
 				Balance: <span id="userBalance"><fmt:setLocale value="en_US" />
-					<fmt:formatNumber value="<%=agentUserForm.getCreditBalance() %>"
+					<fmt:formatNumber value="0.0"
 						type="currency" /> </span>
 			</div>
 		</div>
@@ -59,22 +57,7 @@
  
 <div id="menu">
 	<ul>
-		<li><a href="${actionUrl}" id="im">Incentive Merchandise</a></li>
-		<%if(agentUserForm.getRoleId() != Role.ROLE_ADMIN.getValue()){ 
-			 %>
-		<li>|</li>
-		<li><a href='${userOrderHistoryUrl}' id="oh">Order History</a></li>
-		<%} %>
-		<%if(agentUserForm.getRoleId() == Role.ROLE_ADMIN.getValue()){ 
-			 %>
-		<li>|</li>
-		<li><a href='${adminOrderHistoryUrl}' id="oh">Order History</a></li>
-		<%} %>
-		<%if(agentUserForm.getRoleId() != Role.ROLE_USER.getValue()){ 
-			 %>
-		<li>|</li>
-		<li><a href='${creditUrl}' id="ad">Administration</a></li>
-		<%} %>
+\
 	</ul>
 	<div class="search-box">
 		<img class="search-icon" src="/resources/image/icons/search-icon.png"

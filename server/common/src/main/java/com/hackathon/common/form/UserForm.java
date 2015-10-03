@@ -1,4 +1,4 @@
-package com.paypal.psc.rs.common.form;
+package com.hackathon.common.form;
 
 import java.io.Serializable;
 

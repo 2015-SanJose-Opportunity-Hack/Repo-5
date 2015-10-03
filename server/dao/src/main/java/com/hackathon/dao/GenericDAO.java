@@ -1,4 +1,4 @@
-package com.paypal.psc.rs.dao;
+package com.hackathon.dao;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
