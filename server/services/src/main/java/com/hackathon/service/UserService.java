@@ -1,5 +1,7 @@
 package com.hackathon.service;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,20 @@ public class UserService {
 		
 		return userForm;
 
+	}
+	
+	@Transactional 
+	public int[] getBusinessesLentTo(int id){
+		
+		List<Integer> ids = userDao.findBusinessByUserId(id);
+		int is[] = new int[ids.size()];
+		int index =0 ;
+		for(Integer i: ids){
+			is[index] = i.intValue();
+			index++;
+		}
+		
+		return is;
 	}
 
 }
