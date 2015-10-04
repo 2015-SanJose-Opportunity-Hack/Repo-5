@@ -43,7 +43,7 @@ public class BusinessDAO extends ParentDAO<String, Business>
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<String> getAllCategory(){
+	public List<String> getAllCategories(){
 		List<String> categoryList = null;
 		categoryList = getEntityManager().createQuery("select distinct b.category from Business b").getResultList();
 		if(categoryList == null || categoryList.isEmpty()){
@@ -54,8 +54,8 @@ public class BusinessDAO extends ParentDAO<String, Business>
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<String> getInOrder(String parameter, String order) {
-		List<String> businessList = null;
+	public List<Business> getInOrder(String parameter, String order) {
+		List<Business> businessList = null;
 		String query = "select b from Business b order by b." + parameter + " " + order;
 		businessList = getEntityManager().createQuery(query).getResultList();
 		return businessList;

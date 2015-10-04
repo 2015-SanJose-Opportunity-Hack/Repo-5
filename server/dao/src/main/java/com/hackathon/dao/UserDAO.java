@@ -22,7 +22,7 @@ public class UserDAO extends ParentDAO<String, Business>
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Integer> findByUserId(int userId) { 
+	public List<Integer> findBusinessByUserId(int userId) { 
 		List<Integer> businessList = null;
 		businessList = getEntityManager().createQuery("select u.id from User u where u.business_lent_id = :business_lent_id")
 				.setParameter("business_lent_id", userId).getResultList();

@@ -6,20 +6,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.WebUtils;
 
-import com.hackathon.common.form.AgentUserForm;
+import com.hackathon.common.form.BusinessForm;
+import com.hackathon.common.form.UserForm;
+import com.hackathon.service.BusinessService;
+import com.hackathon.service.UserService;
 
 @Controller
 public class UserHomeController {
 	private static final Logger LOGGER = Logger
 			.getLogger(UserHomeController.class);
 
-
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private BusinessService businessService;
+	
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/home")
 	public String externalHome( 
 			HttpServletRequest httpServletRequest) {
@@ -34,11 +44,10 @@ public class UserHomeController {
 
 	private String processHome( 
 			HttpServletRequest httpServletRequest) {
-		AgentUserForm agentUserForm = new AgentUserForm();
-		agentUserForm.setUserName("user");
-		agentUserForm.setName("User User");
-		agentUserForm.setEmailAddress("user@gmail.com");
-		httpServletRequest.getSession().setAttribute("agentUserForm", agentUserForm);
+		UserForm userForm = userService.getUserById(1); // Hard coded for Chandra.
+		BusinessForm businessForm = businessService.getAllBusinesses();
+		httpServletRequest.getSession().setAttribute("userForm", userForm);
+		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
 		return "home";
 	}
 
