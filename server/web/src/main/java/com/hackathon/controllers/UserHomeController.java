@@ -89,9 +89,9 @@ public class UserHomeController {
 	public String filter( String key,
 			HttpServletRequest httpServletRequest) {
 		UserForm userForm =(UserForm) httpServletRequest.getSession().getAttribute("userForm");
-//		businessService.get
-//		BusinessForm businessForm = businessService.getBusinessLentTo(us)		
-//		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
+		int ids[] = userService.getBusinessesLentTo(userForm.getId());
+		BusinessForm businessForm = businessService.getBusinessLentTo(ids);		
+		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
 		return "home";		
 	}
 	

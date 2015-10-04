@@ -86,15 +86,11 @@ public class BusinessDAO extends ParentDAO<String, Business>
 	}
 
 	@SuppressWarnings("unchecked")
-	public Business findByName(String name) { 
-		Business b = null;
-		b = (Business) getEntityManager().createQuery("select b from Business b where b.businessName = :name")
-				.setParameter("name", name).getResultList().get(0);
-		if(b == null){
-			logger.error("No business found");
-			return null;
-		}
-		return b;
+	public List<Business> findByName(String name) { 
+		return getEntityManager().createQuery("select b from Business b where b.businessName like :name")
+				.setParameter("name", "%" + name + "%").getResultList();
+		
+		
 	}
 	
 }

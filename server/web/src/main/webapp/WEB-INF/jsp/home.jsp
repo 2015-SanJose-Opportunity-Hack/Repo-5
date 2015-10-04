@@ -16,7 +16,7 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 				lat = lat.substring(0, lat.length() - 1) + "]";
 				lon = lon.substring(0, lon.length() - 1) + "]";
 				%>
-<<script type="text/javascript">
+<script type="text/javascript">
 <!--
 	var lat = <%=lat%>;
 	var lon = <%=lon%>;
@@ -28,10 +28,10 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 	<div id="header">
 	  <div class="container_12 nav">	
 	    <div id="logo" class="grid_2 alpha">
-	      <a href="/"><img src="https://zip.kiva.org/assets/logo-beta-27dc7e5530ca2e00c5e9c43e040bc2b3.jpg" alt="Logo beta" width="100px"></a>	      
+	      <a href="/web/home"><img src="https://zip.kiva.org/assets/logo-beta-27dc7e5530ca2e00c5e9c43e040bc2b3.jpg" alt="Logo beta" width="100px"></a>	      
 	    </div>
 	    <div id="logo" class="grid_16 alpha">
-	      <a href="#"><img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg" alt="PP Logo beta" ></a>
+	      <a href="/web/home"><img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg" alt="PP Logo beta" ></a>
 	      <a href="#"><img src="/resources/image/crowd.png" alt="PP Logo beta" ></a>	      
 	    </div>
 	    		   
@@ -57,22 +57,22 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 				   <li class='has-sub'><a href='#'><span>Category</span></a>
 				      <ul>
 				         <li><a href='#' onclick="pageSubmitWithValue('formCategory', 'Food', 'categoryKey','/web/searchByCategory')"><span>Food</span></a></li>
-				         <li class='last'><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Coffee</span></a></li>
+				         <li class='last'><a href='#' onclick="pageSubmitWithValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Coffee</span></a></li>
 				      </ul>
 				   </li>
 				   
 				   
 				   <li class='has-sub'><a href='#'><span>Filter by</span></a>
 				      <ul>
-				         <li><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Business Lent</span></a></li>
-				         <li class='last' ><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Most popular</span></a></li>
+				         <li><a href='#' onclick="pageSubmitWithValue('formCategory', 'Coffee','categoryKey','/web/searchByFilter')"><span>Business Lent</span></a></li>
+				         <li class='last' ><a href='#' onclick="pageSubmitWithValue('formCategory', 'Coffee','categoryKey','/web/searchByFilter')"><span>Most popular</span></a></li>
 				      </ul>
 				   </li>
 				   <li class='has-sub'><a href='#'><span>Sort by</span></a>
 				      <ul>
-				         <li><a href='#'><span>Business Name [A-Z]</span></a></li>
-				         <li class='last'><a href='#'><span>Business Name [Z-A]</span></a></li>
-				         <li class='last'><a href='#'><span>Near by location</span></a></li>
+				         <li><a href='#' onclick="pageSubmitWithValue('formCategory', 'businessName_ASC','categoryKey','/web/sort')"><span>Business Name [A-Z]</span></a></li>
+				         <li class='last'><a href='#' onclick="pageSubmitWithValue('formCategory', 'businessName_DESC','categoryKey','/web/sort')"><span>Business Name [Z-A]</span></a></li>
+				         <li class='last'><a href='#' onclick="pageSubmitWithValue('formCategory', 'businessName_ASC','categoryKey','/web/sort')"><span>Near by location</span></a></li>
 				         
 				      </ul>
 				   </li>   

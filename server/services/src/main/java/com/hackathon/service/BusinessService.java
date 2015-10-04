@@ -112,18 +112,14 @@ public class BusinessService {
 		}
 		List<Business> businessList = new ArrayList<Business>();
 	
-			Business b = businessDAO.findByName(name);
-			if(b!=null){
-				businessList.add(b);
-			}
+		businessList = businessDAO.findByName(name);
+			
 		
 		
-		if(businessList == null || businessList.isEmpty()){
-			return null;
-		}else{
+		
 			BusinessForm businessForm = prepareBusinessForm(businessList);
 			return businessForm;
-		}
+		
 	}
 	
 	private BusinessForm prepareBusinessForm(List<Business> businessList) {
