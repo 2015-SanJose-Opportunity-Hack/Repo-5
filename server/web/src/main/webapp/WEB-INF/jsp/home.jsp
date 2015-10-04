@@ -64,8 +64,8 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 				   
 				   <li class='has-sub'><a href='#'><span>Filter by</span></a>
 				      <ul>
-				         <li><a href='#'><span>Business Lent</span></a></li>
-				         <li class='last'><a href='#'><span>Most popular</span></a></li>
+				         <li><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Business Lent</span></a></li>
+				         <li class='last' ><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Most popular</span></a></li>
 				      </ul>
 				   </li>
 				   <li class='has-sub'><a href='#'><span>Sort by</span></a>
