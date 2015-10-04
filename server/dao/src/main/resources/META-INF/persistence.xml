@@ -5,7 +5,6 @@
 			 version="2.0">	
 	<persistence-unit name="rs.persist" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>com.hackathon.entities.AppConfig</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm"/>
