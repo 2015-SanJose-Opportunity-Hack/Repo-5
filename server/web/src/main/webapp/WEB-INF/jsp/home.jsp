@@ -41,17 +41,27 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 		<div class="container_12 ">			
 			<div id="content_title" class="clearfix">
 			  <h1 class="grid_5 heading-text">Choose a Business</h1>
-			  <div class="search-box"><img class="search-icon" src="https://groupgifting.paypal-psbc.com/image/icons/Zoom_Icon.png" width="44" height="44" alt="search icon"><input name="search" type="text" placeholder="Business Name" style="color:#4B9123" onkeypress="search(this);"><img class="search-close" src="https://groupgifting.paypal-psbc.com/image/icons/search-close-icon.png" width="35" height="35" alt="search icon"></div>			 
+			  <div class="search-box"><img class="search-icon" src="https://groupgifting.paypal-psbc.com/image/icons/Zoom_Icon.png" width="44" height="44" alt="search icon">
+			  <form id ="formSearch" action="/web/search" method="post">
+			  <input name="key" type="text" placeholder="Business Name" style="color:#4B9123" onblur="pageSubmit('formSearch');">
+			  </form>
+			  <img class="search-close" src="https://groupgifting.paypal-psbc.com/image/icons/search-close-icon.png" width="35" height="35" alt="search icon"></div>			 
 			  </div>
+			  <form id ="formCategory" action="/web/searchByCategory" method="post">
 			  <div id='cssmenu'>
+			  
+			  <input type="hidden" id="categoryKey" name="key" value="">
 				<ul>
+				      
 				      
 				   <li class='has-sub'><a href='#'><span>Category</span></a>
 				      <ul>
-				         <li><a href='#'><span>Food</span></a></li>
-				         <li class='last'><a href='#'><span>Coffee</span></a></li>
+				         <li><a href='#' onclick="pageSubmitWithValue('formCategory', 'Food', 'categoryKey','/web/searchByCategory')"><span>Food</span></a></li>
+				         <li class='last'><a href='#' onclick="pageSubmitWIthValue('formCategory', 'Coffee','categoryKey','/web/searchByCategory')"><span>Coffee</span></a></li>
 				      </ul>
 				   </li>
+				   
+				   
 				   <li class='has-sub'><a href='#'><span>Filter by</span></a>
 				      <ul>
 				         <li><a href='#'><span>Business Lent</span></a></li>
@@ -67,8 +77,9 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 				      </ul>
 				   </li>   
 				</ul>
+				
 			</div>
-		  	
+		  	</form>
 			  <!--  -->      
 					
 		</div>
@@ -89,7 +100,8 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 					name = name.substring(0, 26) + "...";
 				} */
 			%>
-				<div class="col-<%=column + 1 %>-business">
+				<div id="itemId<%=i%>" class="col-<%=column + 1 %>-business">
+					<input type="hidden" id="itemIdKey<%=i%>"  value="<%=businessForm.getId()[i]%>" >
 					<img id="tickImage1" src="/resources/image/<%=i+1 %>_0.jpg" class="corner-image">
 					<img class="prod-image" src="/resources/image/<%=i+1 %>_1.jpg">		
 					<div  class="lightbox clean-left"> 

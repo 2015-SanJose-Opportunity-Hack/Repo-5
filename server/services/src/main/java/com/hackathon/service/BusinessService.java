@@ -68,24 +68,18 @@ public class BusinessService {
 	}
 	
 	@Transactional
-	public BusinessForm getBusinessByCategory(List<String> categories){
-		if(categories == null || categories.isEmpty()){
-			return null;
-		}
+	public BusinessForm getBusinessByCategory(String category){
+		
 		List<Business> businessList = new ArrayList<Business>();
-		for(String category: categories){
+		
 			List<Business> b = businessDAO.findByCategory(category);
 			if(b!=null){
 				businessList.addAll(b);
 			}
-		}
 		
-		if(businessList == null || businessList.isEmpty()){
-			return null;
-		}else{
 			BusinessForm businessForm = prepareBusinessForm(businessList);
 			return businessForm;
-		}
+		
 	}
 	
 	@Transactional

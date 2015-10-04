@@ -78,10 +78,39 @@ public class UserHomeController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/search")
-	public String externalPostHome( String key,
+	public String search( String key,
 			HttpServletRequest httpServletRequest) {
-//		businessService.getBusinessInOrder(parameter, order)
-		return "home";
+		BusinessForm businessForm = businessService.getBusinessByName(key);		
+		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
+		return "home";		
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/searchByFilter")
+	public String filter( String key,
+			HttpServletRequest httpServletRequest) {
+		UserForm userForm =(UserForm) httpServletRequest.getSession().getAttribute("userForm");
+//		businessService.get
+//		BusinessForm businessForm = businessService.getBusinessLentTo(us)		
+//		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
+		return "home";		
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/searchByCategory")
+	public String category( String key,
+			HttpServletRequest httpServletRequest) {
+		BusinessForm businessForm = businessService.getBusinessByCategory(key);		
+		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
+		return "home";		
+	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/sort")
+	public String sort( String key,
+			HttpServletRequest httpServletRequest) {
 		
+		String order = key.substring(key.indexOf("_") + 1, key.length()); 
+		key = key.substring(0, key.indexOf("_"));
+		BusinessForm businessForm = businessService.getBusinessInOrder(key, order);		
+		httpServletRequest.getSession().setAttribute("businessForm", businessForm);
+		return "home";		
 	}
 }

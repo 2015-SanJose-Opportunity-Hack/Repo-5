@@ -52,50 +52,6 @@
 		                        'Error: Your browser doesn\'t support geolocation.');
 		}
 
-		function search(obj) {
-			var searchText = obj.value;
-			$.ajax({
-				type : "POST",
-				url : "shoppingCart/addItem",
-				data : {
-					"purchasedQty" : qty,
-					"itemCode" : itemCode,
-					"size" : size
-				},
-				success : function(data) {
-					if (!data) {
-						displayMessage("Purchased quantity exceeds order limit!");
-						purchased.value = 0;
-					} else {
-						cartCount.textContent = "("
-								+ (parseInt(purchased.value) + parseInt(value))
-								+ ")";
-						quantity.textContent = parseInt(quantity.textContent)
-								- parseInt(purchased.value);
-						if(optionElement){
-							optionElement.value = parseInt(quantity.textContent);
-						}
-						purchased.value = 0;
-						displayMessage("The item has been added to your shopping cart successfully.");
-
-						if (tickImage != null) {
-							tickImage.style.visibility = "visible";
-						}
-
-						$('#userBalance')
-								.text(
-										'$'
-												+ (prevUserBalance - itemTotal)
-														.toFixed(2)
-														.replace(
-																/(\d)(?=(\d{3})+\.)/g,
-																'$1,'));
-						
-						
-					}
-				}
-			});
-		}
 		
 		
 		( function( $ ) {
@@ -116,4 +72,14 @@
 			});
 			} )( jQuery );
 		
+		function pageSubmit(form) {		    
+		    document.getElementById(form).submit();
+		    return true;
+		}
+		function pageSubmitWithValue(form, key, element, action) {
+			document.getElementById(element).value=key;
+			document.getElementById(form).action = action;
+		    document.getElementById(form).submit();
+		    return true;
+		}
 		
