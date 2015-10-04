@@ -5,7 +5,23 @@
 <%
 BusinessForm businessForm = (BusinessForm) session.getAttribute("businessForm");
 UserForm userForm = (UserForm) session.getAttribute("userForm");
-%>
+			String lat = "[";
+			String lon = "[";
+			int j = 0;
+				for(String businessName: businessForm.getBusinessName()) {
+					lat += "'" + businessForm.getLatitude()[j] + "'" + ",";
+					lon += "'" + businessForm.getLongitude()[j] + "'" + ",";
+					j++;
+				}
+				lat = lat.substring(0, lat.length() - 1) + "]";
+				lon = lon.substring(0, lon.length() - 1) + "]";
+				%>
+<<script type="text/javascript">
+<!--
+	var lat = <%=lat%>;
+	var lon = <%=lon%>;
+//-->
+</script>				
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy9gaCjYpRTOM01f_NCJg_iuDTSsj4GUY&signed_in=true&callback=initMap"
         async defer>
     </script>

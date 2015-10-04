@@ -194,8 +194,7 @@ function addItemToCart(itemCode, purchaseQty, sizeId, itemPrice, index) {
 				purchased.value = 0;
 			} else {
 
-				$
-						.ajax({
+				$.ajax({
 							type : "POST",
 							url : "shoppingCart/addItem",
 							data : {
