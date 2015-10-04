@@ -16,7 +16,9 @@ CREATE TABLE business (
   businessName varchar(20),
   businessDescription varchar(20),
   likes int,
-  PRIMARY KEY (userId)
+  facebookURL varchar(255),
+  yelpURL varchar(255),
+  PRIMARY KEY (id)
   );
   
   
