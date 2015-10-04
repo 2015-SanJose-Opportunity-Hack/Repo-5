@@ -76,4 +76,12 @@ public class UserHomeController {
 			httpServletResponse.addCookie(cookie);
 		}
 	}
+	
+	@RequestMapping(method = RequestMethod.POST, value = "/search")
+	public String externalPostHome( String key,
+			HttpServletRequest httpServletRequest) {
+//		businessService.getBusinessInOrder(parameter, order)
+		return "home";
+		
+	}
 }

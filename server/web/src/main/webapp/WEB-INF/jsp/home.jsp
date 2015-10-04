@@ -25,7 +25,7 @@ UserForm userForm = (UserForm) session.getAttribute("userForm");
 		<div class="container_12 ">			
 			<div id="content_title" class="clearfix">
 			  <h1 class="grid_5 heading-text">Choose a Business</h1>
-			  <div class="search-box"><img class="search-icon" src="https://groupgifting.paypal-psbc.com/image/icons/Zoom_Icon.png" width="44" height="44" alt="search icon"><input name="search" type="text" placeholder="Business Name" style="color:#4B9123"><img class="search-close" src="https://groupgifting.paypal-psbc.com/image/icons/search-close-icon.png" width="35" height="35" alt="search icon"></div>			 
+			  <div class="search-box"><img class="search-icon" src="https://groupgifting.paypal-psbc.com/image/icons/Zoom_Icon.png" width="44" height="44" alt="search icon"><input name="search" type="text" placeholder="Business Name" style="color:#4B9123" onkeypress="search(this);"><img class="search-close" src="https://groupgifting.paypal-psbc.com/image/icons/search-close-icon.png" width="35" height="35" alt="search icon"></div>			 
 			  </div>
 			  <div id='cssmenu'>
 				<ul>
