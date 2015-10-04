@@ -1,5 +1,11 @@
 
-
+<%@page import="org.apache.commons.lang3.StringUtils"%>
+<%@page import="com.hackathon.common.form.UserForm"%>
+<%@page import="com.hackathon.common.form.BusinessForm"%>
+<%
+BusinessForm businessForm = (BusinessForm) session.getAttribute("businessForm");
+UserForm userForm = (UserForm) session.getAttribute("userForm");
+%>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy9gaCjYpRTOM01f_NCJg_iuDTSsj4GUY&signed_in=true&callback=initMap"
         async defer>
     </script>
@@ -57,13 +63,23 @@
 	<div class="main-content">
 		<div class="container_12">
 			<div class="content-row clean-left">
-				<div class="col-1-business">
-					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
-					<img class="prod-image" src="/resources/image/2_1.jpg">		
+			
+			<%
+			int i = 0;
+				for(String businessName: businessForm.getBusinessName()) {
+				int column = i%3;
+				String name = (businessForm.getOwnerName()[i] + ": " + businessName);
+				/* if(name.length() > 26) {
+					name = name.substring(0, 26) + "...";
+				} */
+			%>
+				<div class="col-<%=column + 1 %>-business">
+					<img id="tickImage1" src="/resources/image/<%=i+1 %>_0.jpg" class="corner-image">
+					<img class="prod-image" src="/resources/image/<%=i+1 %>_1.jpg">		
 					<div  class="lightbox clean-left"> 
 						<div class="item-title">
-							<h2>Jenny: 1920 C</h2>
-							<h3>San Francisco, CA</h3>
+							<h2 class="businesNameH2"><%=name %></h2>
+							<h3><%=businessForm.getCity()[i] + ", " + businessForm.getState()[i] %></h3>
 						</div>
 					</div>	
 					<div  class="lightbox-adds clean-left">
@@ -77,133 +93,32 @@
 							  fjs.parentNode.insertBefore(js, fjs);
 							}(document, 'script', 'facebook-jssdk'));</script>
 
-							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
-							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
-							<a href="https://zip.kiva.org/loans/16709#tab_comments" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+							
+							<a href="<%=businessForm.getStoreLink()[i] %>" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>
+							<%if(StringUtils.isBlank(businessForm.getYelpURL()[i])) {%>							
+								<a href="#" target="_blank" onclick="return false;"><img style="background-color: black;" src="/resources/image/yelp.png"></a>
+							<%
+								} else {
+							%>
+								<a href="<%=businessForm.getYelpURL()[i] %>" target="_blank" ><img style="background-color: black;" src="/resources/image/yelp.png"></a>
+							<%
+								} 
+							%>							
+							<a href="<%=businessForm.getOwnerLink()[i] %>" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+							<div class="fb-like" data-href="<%=businessForm.getStoreLink()[i] %>" data-width="50px" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 						</div>
 					</div>
 							
 				</div>
 				
-				<div class="col-2-business">
-					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
-					<img class="prod-image" src="/resources/image/2_1.jpg">		
-					<div  class="lightbox clean-left"> 
-						<div class="item-title">
-							<h2>Jenny: 1920 C</h2>
-							<h3>San Francisco, CA</h3>
-						</div>
-					</div>	
-					<div  class="lightbox-adds clean-left">
-						<div class="item-adds clean-left">														
-							<div id="fb-root"></div>
-							<script>(function(d, s, id) {
-							  var js, fjs = d.getElementsByTagName(s)[0];
-							  if (d.getElementById(id)) return;
-							  js = d.createElement(s); js.id = id;
-							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-							  fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));</script>
-
-							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
-							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
-							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
-						</div>
-					</div>
-							
-				</div>
-				
-				<div class="col-3-business">
-					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
-					<img class="prod-image" src="/resources/image/2_1.jpg">		
-					<div  class="lightbox clean-left"> 
-						<div class="item-title">
-							<h2>Jenny: 1920 C</h2>
-							<h3>San Francisco, CA</h3>
-						</div>
-					</div>	
-					<div  class="lightbox-adds clean-left">
-						<div class="item-adds clean-left">														
-							<div id="fb-root"></div>
-							<script>(function(d, s, id) {
-							  var js, fjs = d.getElementsByTagName(s)[0];
-							  if (d.getElementById(id)) return;
-							  js = d.createElement(s); js.id = id;
-							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-							  fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));</script>
-
-							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
-							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
-							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
-						</div>
-					</div>
-							
-				</div>
-				
-			<div class="col-1-business">
-					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
-					<img class="prod-image" src="/resources/image/2_1.jpg">		
-					<div  class="lightbox clean-left"> 
-						<div class="item-title">
-							<h2>Jenny: 1920 C</h2>
-							<h3>San Francisco, CA</h3>
-						</div>
-					</div>	
-					<div  class="lightbox-adds clean-left">
-						<div class="item-adds clean-left">														
-							<div id="fb-root"></div>
-							<script>(function(d, s, id) {
-							  var js, fjs = d.getElementsByTagName(s)[0];
-							  if (d.getElementById(id)) return;
-							  js = d.createElement(s); js.id = id;
-							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-							  fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));</script>
-
-							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
-							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
-							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
-						</div>
-					</div>
-							
-				</div>				
+				<%
+				i++;
+				}
+				%>								
 			</div>
 		</div>
 	</div>
 	
 	
      
-             <!-- <div class="row">
-                 <div class="col-md-2">
-
-                     
-                     </div>
-                  <div class="details grid_5">
-	                 <div class="item-title">
-			          <h2><a title="Jenny: 1920 C" href="/loans/16738">Jenny: 1920 C</a></h2>
-			
-			          <h3>San Francisco, CA</h3>
-			        </div>
-				</div>
-                 <div class="col-md-4">
-                     <ul class="social-btn"  type="none" >
-                         <li>Like</li>
-                         <li>Yelp</li>
-                         <li>Shop</li>
-                     </ul>
-                 </div>
-             </div> -->
-
-<!-- 
-            <div class="row">
-                     <div class="prod-image">
-                     <img class="img-responsive thumbnail-custom thumbnail " src="/resources/image/2_0.jpg">                     
-                	</div>
-            </div>
-     </div> -->
 

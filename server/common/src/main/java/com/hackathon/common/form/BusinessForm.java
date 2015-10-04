@@ -1,6 +1,8 @@
 package com.hackathon.common.form;
 
-public class BusinessForm {
+import java.io.Serializable;
+
+public class BusinessForm implements Serializable {
 	
 	private int[] id;
 	

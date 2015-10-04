@@ -58,7 +58,7 @@ public class Business implements Serializable {
 	@Column(name = "state")
 	private String  state;
 	
-	@Column(name = "zipcode")
+	@Column(name = "zipCode")
 	private long  zipcode;
 
 	public int getId() {

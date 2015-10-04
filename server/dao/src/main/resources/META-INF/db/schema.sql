@@ -16,7 +16,7 @@ CREATE TABLE business (
   longitude double,
   city varchar(20),
   state varchar (20),
-  zipCode smallint,
+  zipCode int,
   PRIMARY KEY (id)
   );
   

@@ -146,6 +146,7 @@ public class BusinessService {
 			city[i] = b.getCity();
 			state[i] = b.getState();
 			zipcode[i] = b.getZipcode();
+			i++;
 
 		}
 		businessForm.setBusinessName(businessName);

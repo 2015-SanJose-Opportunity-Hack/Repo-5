@@ -161,7 +161,15 @@ div.main-content {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+div.item-title h2.businesNameH2 {
+	line-height: 1;
+margin: 0px;
+font-weight: normal;
+color: #4B9123;
+margin-top: 10px;
+text-align: left;
+margin-left: 105px;
+}
 h1.heading-text {
 	line-height: 1;
     margin: 0px;
@@ -242,6 +250,8 @@ div.lightbox h3 {
     margin-bottom: 0px;
     font-size: 1.2em;
     color: white;
+    text-align: left;
+    margin-left: 105px;
 }
 
 
