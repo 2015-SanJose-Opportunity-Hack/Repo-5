@@ -176,7 +176,10 @@ h1 {
 
 /* Google map starts */
 #content_title {
-    margin : 20px 0 20px 0px;
+    margin : 0px 0 10px 0px;
+    width: 640px;
+    position: absolute;
+	z-index: 2000;
 }
 #content_title h1 {
     font-family: "Museo Slab 500",Rockwell,Georgia,serif;
@@ -185,14 +188,14 @@ h1 {
     margin-bottom: 0px;
 }
 .container_12 .grid_5 {
-    width: 380px;
+    width: 320px;
     max-width: 380px;
 }
 #map { height: 250px;  margin: auto;}
 
 /* Google map ends */
 
-clean-left {
+div.clean-left {
 	clear : both;
 	float : left;
 }
@@ -200,6 +203,14 @@ clean-left {
 clean-right {
 	clear : both;
 	float : left;
+}
+div.content-map-bar,
+div.content-menu-bar {
+	width :100%;
+	height: auto;
+	z-index : 2000;
+	overflow: visible;
+	
 }
 div.content-row {
 	/* background:
@@ -236,3 +247,224 @@ div.item-adds h2 {
 	margin: 5px;	
 }
 
+
+
+.search-box {
+    /* border: 1px solid red; */
+    width: 300px;
+    height: 35px;
+    background-color: #fff;
+    /* margin: 5px 7px; */
+    border: 1px solid #cfcfcf;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    display: inline;
+    float: left;
+    /* margin-right: 40px; */
+    margin-top: 5px;
+}
+
+.search-box img.search-icon {
+    /* margin: 8px 0 0 5px; */
+    float: left;
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+}
+
+.search-box input {
+    border: 1px solid #008000;
+    border: none;
+    height: 32px;
+    width: 230px;
+    /* margin: 0; */
+    position: absolute;
+    font-size: 16px;
+    /* padding-left: 5px; */
+    /* padding-right: 5px; */
+    float: left;
+}
+
+
+input {
+    -webkit-appearance: textfield;
+    padding: 1px;
+    background-color: white;
+    border: 2px inset;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    cursor: auto;
+}
+
+input, textarea, keygen, select, button {
+    margin: 0em;
+    font: 11px '.HelveticaNeueDeskInterface-Regular';
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+}
+
+.search-box img.search-close {
+    /* margin: 8px 0 0 5px; */
+    float: right;
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+}
+ul.horizontal-ul {
+	list-style: desc;
+	list-style-position: none;
+	display: block!important;
+	position: static!important;
+}
+/* CSS menu */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+#cssmenu {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  font-size: 10px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: left;
+  z-index: 999;
+  overflow: visible;
+  position: relative;
+  margin: 15px 0 20px 650px;
+}
+#cssmenu > ul {
+  width: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  /* border: 1px solid #ece6e8; */
+  /* border-bottom: 3px solid #d9ced2; */
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+#cssmenu > ul li#responsive-tab {
+  display: none;
+  /* Hide for large screens */
+
+}
+#cssmenu > ul li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+#cssmenu > ul li.right {
+  float: right;
+}
+#cssmenu > ul li.has-sub {
+  position: relative;
+}
+#cssmenu > ul li.has-sub:hover ul {
+  display: block;
+}
+#cssmenu > ul li.has-sub ul {
+  display: none;
+  width: 250px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: #ffffff;
+  border: 1px solid #ece6e8;
+  border-bottom: 3px solid #d9ced2;
+  border-top: 0 none;
+}
+#cssmenu > ul li.has-sub ul li {
+  display: block;
+}
+#cssmenu > ul li.has-sub > a {
+  background-image: url('images/caret.png');
+  background-repeat: no-repeat;
+  background-position: 90% -95%;
+}
+#cssmenu > ul li.has-sub > a.active,
+#cssmenu > ul li.has-sub > a:hover {
+  background: #4B9123 url('images/caret.png') no-repeat;
+  background-position: 90% 195%;
+}
+#cssmenu > ul li a {
+  display: block;
+  padding: 12px 24px 11px 24px;
+  text-decoration: none;
+  color: #747474;
+  text-shadow: 0px 1px 0px #fff;
+}
+#cssmenu > ul li a.active,
+#cssmenu > ul li a:hover {
+  background: #4B9123;
+  color: #fff;
+  text-shadow: 0px 1px 0px #000;
+}
+@media (max-width: 600px) {
+  #cssmenu > ul {
+    width: 100%;
+  }
+  #cssmenu > ul li#responsive-tab {
+    display: block;
+  }
+  #cssmenu > ul li#responsive-tab a {
+    background: url('images/menu.png') no-repeat;
+    background-position: 95% -35%;
+  }
+  #cssmenu > ul li#responsive-tab a:hover {
+    background-color: #4B9123;
+    background-position: 95% 135%;
+  }
+  #cssmenu > ul li {
+    display: none;
+  }
+  #cssmenu > ul li.right {
+    float: none;
+  }
+  #cssmenu > ul li.has-sub {
+    position: relative;
+  }
+  #cssmenu > ul li.has-sub ul {
+    display: block;
+    position: static;
+    width: 100%;
+    background: #ffffff;
+    border: 0 none;
+  }
+  #cssmenu > ul li.has-sub ul li {
+    display: block !important;
+  }
+  #cssmenu > ul li.has-sub ul li a span {
+    display: block;
+    padding-left: 24px;
+  }
+  #cssmenu > ul li.has-sub > a {
+    background-image: none;
+  }
+}
+/* Make sure they show even if hidden in mobile view by JS */
+@media (min-width: 600px) {
+  #cssmenu > ul > li.collapsed {
+    display: inline-block !important;
+    *display: inline;
+    zoom: 1;
+  }
+  #cssmenu > ul ul li.collapsed {
+    display: block !important;
+  }
+}
+
+/* CSS menu */
