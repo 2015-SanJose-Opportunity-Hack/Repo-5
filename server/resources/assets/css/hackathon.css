@@ -161,6 +161,14 @@ div.main-content {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+h1.heading-text {
+	line-height: 1;
+    margin: 0px;
+    font-weight: normal;
+    color: #4B9123;
+}
+
 h1, h2, h3, h4, h5, h6 {
     line-height: 1;
     margin: 0px;
@@ -391,13 +399,13 @@ ul.horizontal-ul {
   display: block;
 }
 #cssmenu > ul li.has-sub > a {
-  background-image: url('images/caret.png');
+  background-image: url('/resources/image/caret.png');
   background-repeat: no-repeat;
   background-position: 90% -95%;
 }
 #cssmenu > ul li.has-sub > a.active,
 #cssmenu > ul li.has-sub > a:hover {
-  background: #4B9123 url('images/caret.png') no-repeat;
+  background: #4B9123 url('/resources/image/caret.png') no-repeat;
   background-position: 90% 195%;
 }
 #cssmenu > ul li a {
@@ -421,7 +429,7 @@ ul.horizontal-ul {
     display: block;
   }
   #cssmenu > ul li#responsive-tab a {
-    background: url('images/menu.png') no-repeat;
+    background: url('/resources/image/menu.png') no-repeat;
     background-position: 95% -35%;
   }
   #cssmenu > ul li#responsive-tab a:hover {
@@ -468,3 +476,27 @@ ul.horizontal-ul {
 }
 
 /* CSS menu */
+
+
+/*Copy right styles starting*/
+.footer_copyright {
+    background: url("/resources/image/footer/copy-right-bg-icon.png") repeat-x scroll 0 0;;
+    /*background: none repeat scroll 0 0 #ECECEC;*/
+    height: 57px;
+    width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: baseline;
+    color: #ffffff;
+    padding-top: 20px;
+    font-size: 12px;
+    clear: both;
+
+}
+
+.footer_copyright a {
+    color: #ffffff;
+}
+
+/*Copy right styles ending*/

@@ -19,18 +19,20 @@
 	<head>
 		
 		<meta charset="utf-8">
-		<meta name="description" content="Incertive Merchandise store web portal for paypal customer service">
-		<meta name="keywords" content="PayPal RewardStore" />		
-		<title>Incentive Merchandise Store </title>
+		<meta name="description" content="PayPal Crown Funding web portal">
+		<meta name="keywords" content="PayPal Croud Funding" />		
+		
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  	<meta http-equiv="X-Frame-Options" content="deny" />
-		<!-- bootstrap -->
-		<link href="/resources/css/main.css" rel="stylesheet" media="screen">
-		<script src="/resources/js/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="/resources/js/jquery.tablesorter.min.js"></script>
-  		<script src="/resources/js/main.js"></script>
-  		<script src="/resources/js/store-util.js"></script>
+   
+    <title> PayPal Croud Funding</title>
+    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/css/hackathon.css">
+    <script type="text/javascript" src="/resources/js/hackathon.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery-2.1.1.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 		<link rel="shortcut icon" sizes="196x196" href="https://www.paypalobjects.com/webstatic/icon/pp196.png" />
 		<link rel="shortcut icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/favicon.ico" />
 		<link rel="icon" type="image/x-icon" href="https://www.paypalobjects.com/webstatic/icon/pp32.png" />

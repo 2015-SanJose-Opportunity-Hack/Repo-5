@@ -13,14 +13,14 @@
 		<footer>
 			
 			<div class="footer_copyright">
-            	&copy; 2015 PayPal Reward Store ALL RIGHTS RESERVED. <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full"> PRIVACY POLICY</a> | <a href="https://www.paypal.com/us/webapps/mpp/ua/useragreement-full">TERMS & CONDITIONS</a>
+            	&copy; 2015 PayPal Croud Funding ALL RIGHTS RESERVED. <a href="https://www.paypal.com/us/webapps/mpp/ua/privacy-full"> PRIVACY POLICY</a> | <a href="https://www.paypal.com/us/webapps/mpp/ua/useragreement-full">TERMS & CONDITIONS</a>
        		</div>
 		
 		</footer>
 		<!-- /footer -->
 		<link href='/resources/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
 		<link href='/resources/css/dataTables.bootstrap.min.css' rel='stylesheet' type='text/css'>
-		<link href="/resources/css/main.css" rel="stylesheet" media="screen">
+		
 		
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <!-- <script type="text/javascript" src="/resources/js/jquery-2.1.1.min.js"></script> -->

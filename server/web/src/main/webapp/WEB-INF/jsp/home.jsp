@@ -1,74 +1,209 @@
-<style type="text/css">
-  
-  #map { height: 250px; width: 80%; margin: auto;}
-</style>
-
-Hello
 
 
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
-	<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-
-
-	<div id="map"></div>
-    <script>
-		function initMap() {
-		  var map = new google.maps.Map(document.getElementById('map'), {
-		    center: {lat: 37.765521, lng: -122.418460},
-		    zoom: 8
-		  });
-		  var infoWindow = new google.maps.InfoWindow({map: map});
-		
-		  // Try HTML5 geolocation.
-		  if (navigator.geolocation) {
-		    navigator.geolocation.getCurrentPosition(function(position) {
-		      var pos = {
-		        lat: position.coords.latitude,
-		        lng: position.coords.longitude
-		      };
-		
-		      infoWindow.setPosition(pos);
-		      infoWindow.setContent('PayPal');
-		      map.setCenter(pos);
-		    }, function() {
-		      handleLocationError(true, infoWindow, map.getCenter());
-		    });
-		    var myLatLng = {lat: 37.765521, lng: -122.418460};
-		   addMarker(myLatLng, map);
-		  } else {
-		    // Browser doesn't support Geolocation
-		    handleLocationError(false, infoWindow, map.getCenter());
-		  }
-		}
-
-		function addMarker( myLatLng,  map) {
-			 var marker = new google.maps.Marker({
-			        position: myLatLng,
-			        map: map,			        
-			        animation: google.maps.Animation.DROP,
-			        label: 'Chile Lindo Empanadas, San Francisco, CA'
-			      });
-			 marker.addListener('click', toggleBounce);
-		}
-
-		
-		
-		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-		  infoWindow.setPosition(pos);
-		  infoWindow.setContent(browserHasGeolocation ?
-		                        'Error: The Geolocation service failed.' :
-		                        'Error: Your browser doesn\'t support geolocation.');
-		}
-
-    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy9gaCjYpRTOM01f_NCJg_iuDTSsj4GUY&signed_in=true&callback=initMap"
         async defer>
     </script>
+	<div id="header">
+	  <div class="container_12 nav">	
+	    <div id="logo" class="grid_2 alpha">
+	      <a href="/"><img src="https://zip.kiva.org/assets/logo-beta-27dc7e5530ca2e00c5e9c43e040bc2b3.jpg" alt="Logo beta" width="100px"></a>	      
+	    </div>
+	    <div id="logo" class="grid_16 alpha">
+	      <a href="#"><img src="https://www.paypalobjects.com/webstatic/i/logo/rebrand/ppcom.svg" alt="PP Logo beta" ></a>
+	      <a href="#"><img src="/resources/image/crowd.png" alt="PP Logo beta" ></a>	      
+	    </div>
+	    		   
+	  </div>
+	</div>
+	<div class="content-menu-bar clean-left">
+		<div class="container_12 ">			
+			<div id="content_title" class="clearfix">
+			  <h1 class="grid_5 heading-text">Choose a Business</h1>
+			  <div class="search-box"><img class="search-icon" src="https://groupgifting.paypal-psbc.com/image/icons/Zoom_Icon.png" width="44" height="44" alt="search icon"><input name="search" type="text" placeholder="Business Name" style="color:#4B9123"><img class="search-close" src="https://groupgifting.paypal-psbc.com/image/icons/search-close-icon.png" width="35" height="35" alt="search icon"></div>			 
+			  </div>
+			  <div id='cssmenu'>
+				<ul>
+				      
+				   <li class='has-sub'><a href='#'><span>Category</span></a>
+				      <ul>
+				         <li><a href='#'><span>Food</span></a></li>
+				         <li class='last'><a href='#'><span>Coffee</span></a></li>
+				      </ul>
+				   </li>
+				   <li class='has-sub'><a href='#'><span>Filter by</span></a>
+				      <ul>
+				         <li><a href='#'><span>Business Lent</span></a></li>
+				         <li class='last'><a href='#'><span>Most popular</span></a></li>
+				      </ul>
+				   </li>
+				   <li class='has-sub'><a href='#'><span>Sort by</span></a>
+				      <ul>
+				         <li><a href='#'><span>Business Name [A-Z]</span></a></li>
+				         <li class='last'><a href='#'><span>Business Name [Z-A]</span></a></li>
+				         <li class='last'><a href='#'><span>Near by location</span></a></li>
+				         
+				      </ul>
+				   </li>   
+				</ul>
+			</div>
+		  	
+			  <!--  -->      
+					
+		</div>
+	</div>
+	<div class="content-map-bar clean-left">
+	<div id="map" class="container_12" ></div>
+	</div>
+	<div class="main-content">
+		<div class="container_12">
+			<div class="content-row clean-left">
+				<div class="col-1-business">
+					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
+					<img class="prod-image" src="/resources/image/2_1.jpg">		
+					<div  class="lightbox clean-left"> 
+						<div class="item-title">
+							<h2>Jenny: 1920 C</h2>
+							<h3>San Francisco, CA</h3>
+						</div>
+					</div>	
+					<div  class="lightbox-adds clean-left">
+						<div class="item-adds clean-left">														
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+
+							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
+							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
+							<a href="https://zip.kiva.org/loans/16709#tab_comments" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+						</div>
+					</div>
+							
+				</div>
+				
+				<div class="col-2-business">
+					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
+					<img class="prod-image" src="/resources/image/2_1.jpg">		
+					<div  class="lightbox clean-left"> 
+						<div class="item-title">
+							<h2>Jenny: 1920 C</h2>
+							<h3>San Francisco, CA</h3>
+						</div>
+					</div>	
+					<div  class="lightbox-adds clean-left">
+						<div class="item-adds clean-left">														
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+
+							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
+							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
+							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+						</div>
+					</div>
+							
+				</div>
+				
+				<div class="col-3-business">
+					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
+					<img class="prod-image" src="/resources/image/2_1.jpg">		
+					<div  class="lightbox clean-left"> 
+						<div class="item-title">
+							<h2>Jenny: 1920 C</h2>
+							<h3>San Francisco, CA</h3>
+						</div>
+					</div>	
+					<div  class="lightbox-adds clean-left">
+						<div class="item-adds clean-left">														
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+
+							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
+							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
+							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+						</div>
+					</div>
+							
+				</div>
+				
+			<div class="col-1-business">
+					<img id="tickImage1" src="/resources/image/2_0.jpg" class="corner-image">
+					<img class="prod-image" src="/resources/image/2_1.jpg">		
+					<div  class="lightbox clean-left"> 
+						<div class="item-title">
+							<h2>Jenny: 1920 C</h2>
+							<h3>San Francisco, CA</h3>
+						</div>
+					</div>	
+					<div  class="lightbox-adds clean-left">
+						<div class="item-adds clean-left">														
+							<div id="fb-root"></div>
+							<script>(function(d, s, id) {
+							  var js, fjs = d.getElementsByTagName(s)[0];
+							  if (d.getElementById(id)) return;
+							  js = d.createElement(s); js.id = id;
+							  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+							  fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+
+							<div class="fb-like" data-href="http://www.kiva.org/lend/956601" data-width="100px" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+							<a href="http://www.kiva.org/lend/956601" target="_blank" style="margin:0 10px 0 10px;"><img style="" src="/resources/image/shopping_bag_blue.png"></a>							
+							<a href="" target="_blank"><img style="background-color: black;" src="/resources/image/yelp.png"></a>							
+							<a href="" style="margin:0 10px 0 10px;" target="_blank"><img style="" src="/resources/image/sendemail.png"></a>
+						</div>
+					</div>
+							
+				</div>				
+			</div>
+		</div>
+	</div>
+	
+	
+     
+             <!-- <div class="row">
+                 <div class="col-md-2">
+
+                     
+                     </div>
+                  <div class="details grid_5">
+	                 <div class="item-title">
+			          <h2><a title="Jenny: 1920 C" href="/loans/16738">Jenny: 1920 C</a></h2>
+			
+			          <h3>San Francisco, CA</h3>
+			        </div>
+				</div>
+                 <div class="col-md-4">
+                     <ul class="social-btn"  type="none" >
+                         <li>Like</li>
+                         <li>Yelp</li>
+                         <li>Shop</li>
+                     </ul>
+                 </div>
+             </div> -->
+
+<!-- 
+            <div class="row">
+                     <div class="prod-image">
+                     <img class="img-responsive thumbnail-custom thumbnail " src="/resources/image/2_0.jpg">                     
+                	</div>
+            </div>
+     </div> -->
+

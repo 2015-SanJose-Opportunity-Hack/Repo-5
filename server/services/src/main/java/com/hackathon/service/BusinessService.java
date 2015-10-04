@@ -2,15 +2,16 @@ package com.hackathon.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hackathon.common.form.BusinessForm;
 import com.hackathon.dao.BusinessDAO;
 import com.hackathon.entities.Business;
 
+@Service
 public class BusinessService {
 
 	@Autowired

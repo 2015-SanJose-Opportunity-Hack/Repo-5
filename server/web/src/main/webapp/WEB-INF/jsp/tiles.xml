@@ -6,8 +6,7 @@
 <!-- External page template -->
 
 	<definition name="pageExt" templateExpression="/WEB-INF/jsp/page.jsp">
-		<put-attribute name="header" expression="/WEB-INF/jsp/headerExt.jsp" />
-		<put-attribute name="footer" expression="/WEB-INF/jsp/footerExt.jsp" />
+		
 	</definition>
 		
 	<definition name="page" templateExpression="/WEB-INF/jsp/page.jsp">

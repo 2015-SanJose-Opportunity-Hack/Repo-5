@@ -14,6 +14,4 @@
 		<!-- include all compiled plugins (below), or include individual files as needed -->
 		<script src="/resources/js/main.js"></script>
         <script src="/resources/js/store-util.js"></script>
-        		
-		
-		<link href="/resources/css/main.css" rel="stylesheet" media="screen">
+        				
