@@ -110,6 +110,28 @@ public class BusinessService {
 	}
 	
 
+
+	@Transactional
+	public BusinessForm getBusinessByName(String name){
+		if(name == null){
+			return null;
+		}
+		List<Business> businessList = new ArrayList<Business>();
+	
+			Business b = businessDAO.findByName(name);
+			if(b!=null){
+				businessList.add(b);
+			}
+		
+		
+		if(businessList == null || businessList.isEmpty()){
+			return null;
+		}else{
+			BusinessForm businessForm = prepareBusinessForm(businessList);
+			return businessForm;
+		}
+	}
+	
 	private BusinessForm prepareBusinessForm(List<Business> businessList) {
 		if (businessList == null || businessList.isEmpty()) {
 			return null;
