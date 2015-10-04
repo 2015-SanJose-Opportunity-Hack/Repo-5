@@ -22,3 +22,13 @@ INSERT INTO `hackathon`.`user` (`name`, `email`, `business_lent_id`) VALUES ('Ch
 INSERT INTO `hackathon`.`user` (`name`, `email`, `business_lent_id`) VALUES ('Chandra ', 'csivakolundu@paypalcorp.com', '1');
 INSERT INTO `hackathon`.`user` (`name`, `email`, `business_lent_id`) VALUES ('Pooja', 'poshroff@paypal.com', '2');
 
+
+UPDATE `hackathon`.`business` SET `latitude`='38.941850', `longitude`='-77.333982', `zipCode`='20191' WHERE `id`='6';
+UPDATE `hackathon`.`business` SET `latitude`='37.774409', `longitude`='-122.420208', `zipCode`='94101' WHERE `id`='5';
+UPDATE `hackathon`.`business` SET `yelpURL`='http://www.yelp.com/biz/bread-srsly-san-francisco', `latitude`='37.761438', `longitude`='-122.424738', `zipCode`='94110' WHERE `id`='7';
+UPDATE `hackathon`.`business` SET `latitude`='37.774409', `longitude`='-122.420208', `zipCode`='94101' WHERE `id`='8';
+UPDATE `hackathon`.`business` SET `latitude`='37.773434', `longitude`='-122.438916', `zipCode`='94117' WHERE `id`='9';
+UPDATE `hackathon`.`business` SET `latitude`='45.521555', `longitude`='-122.681392', `zipCode`='97205' WHERE `id`='10';
+UPDATE `hackathon`.`business` SET `yelpURL`='http://www.yelp.com/biz/mushmina-wayne', `latitude`='40.044368', `longitude`='-75.390019', `zipCode`='19087' WHERE `id`='11';
+
+
