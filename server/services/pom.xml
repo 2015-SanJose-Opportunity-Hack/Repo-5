@@ -60,7 +60,25 @@
     		 <groupId>org.apache.velocity</groupId>
    			 <artifactId>velocity-tools</artifactId>
    			 <version>2.0</version>
-		</dependency>	    
+		</dependency>	  
+		<!-- for yelp starts -->
+		<dependency>
+			<groupId>org.scribe</groupId>
+			<artifactId>scribe</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.beust</groupId>
+			<artifactId>jcommander</artifactId>
+			<version>1.48</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+				
+		<!-- for yelp ends -->	  
   	</dependencies>
 
 	<build>
