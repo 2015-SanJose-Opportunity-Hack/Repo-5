@@ -42,17 +42,25 @@ Hello
 		      handleLocationError(true, infoWindow, map.getCenter());
 		    });
 		    var myLatLng = {lat: 37.765521, lng: -122.418460};
-		    var marker = new google.maps.Marker({
-		        position: myLatLng,
-		        map: map,
-		        label: 'Chile Lindo Empanadas, San Francisco, CA'
-		      });
+		   addMarker(myLatLng, map);
 		  } else {
 		    // Browser doesn't support Geolocation
 		    handleLocationError(false, infoWindow, map.getCenter());
 		  }
 		}
 
+		function addMarker( myLatLng,  map) {
+			 var marker = new google.maps.Marker({
+			        position: myLatLng,
+			        map: map,			        
+			        animation: google.maps.Animation.DROP,
+			        label: 'Chile Lindo Empanadas, San Francisco, CA'
+			      });
+			 marker.addListener('click', toggleBounce);
+		}
+
+		
+		
 		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 		  infoWindow.setPosition(pos);
 		  infoWindow.setContent(browserHasGeolocation ?
